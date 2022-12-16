@@ -58,7 +58,7 @@ def create_accounts():
 
 # Create threads
 threads = []
-for i in range(1300):
+for i in range(10):
   t = threading.Thread(target=create_accounts)
   threads.append(t)
   t.start()
