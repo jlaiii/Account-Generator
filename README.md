@@ -32,5 +32,4 @@ You can customize this script by modifying the following variables:
 You can also customize the script by modifying the `generate_email`, `generate_password`, and `generate_username` functions, which are responsible for generating the email addresses, passwords, and usernames, respectively.
 
 ## Warning
-
-Please be aware that this script may be illegal or unethical in some jurisdictions. Use it at your own risk.
+Please be aware that this script may be illegal or unethical in some jurisdictions. Use it for educational purposes only and do not use it to engage in any illegal or unethical activities. Use it at your own risk.
