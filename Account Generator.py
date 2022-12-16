@@ -1,3 +1,4 @@
+import threading
 import random
 import string
 import requests
@@ -20,7 +21,7 @@ def generate_username():
   # Generate a random username
   return ''.join(random.choices(string.ascii_letters + string.digits, k=8))
 
-while True:
+def send_request():
   # Generate the payload
   email = generate_email()
   password = generate_password()
@@ -40,7 +41,18 @@ while True:
   
   # Save the username and password to the file
   with open(file_path, 'a') as f:
-      f.write(f"Username: {username} Password: {password}\n\n")
+      f.write(f"Username: {username} Password: {password}\n")
     
   # Print the generated username and password
   print(f"Username: {username} Password: {password}")
+
+def create_accounts():
+  while True:
+    send_request()
+
+# Create threads
+threads = []
+for i in range(999):
+  t = threading.Thread(target=create_accounts)
+  threads.append(t)
+  t.start()
