@@ -8,18 +8,24 @@ desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
 file_path = os.path.join(desktop, 'accounts.txt')
 
 def generate_email():
-  # Generate a random email address
-  username = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
-  domain = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
-  return f"{username}@{domain}.com"
+  # Generate a random email address using one of the top 5 most popular email domains
+  email_domains = ["gmail.com", "yahoo.com", "outlook.com", "aol.com", "hotmail.com"]
+  domain = random.choice(email_domains)
+  return f"{generate_username()}@{domain}"
 
 def generate_password():
-  # Generate a random password
-  return ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+  # Generate a random password using a combination of lowercase letters, uppercase letters, digits, and special characters
+  special_characters = "!@#$%^&*()"
+  characters = string.ascii_letters + string.digits + special_characters
+  return ''.join(random.choices(characters, k=8))
 
 def generate_username():
-  # Generate a random username
-  return ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+  # Generate a more human-like username by using a combination of
+  # a random name and a random number
+  names = ["Alice", "Bob", "Charlie", "Dave", "Eve", "Frank", "Greta", "Hannah", "Ivy", "Jake"]
+  name = random.choice(names)
+  number = random.randint(10000, 10000000)
+  return f"{name}{number}"
 
 def send_request():
   # Generate the payload
@@ -39,12 +45,12 @@ def send_request():
   # Send the POST request
   response = requests.post("http://www.hacker-project.com/index.php", data=payload)
   
-  # Save the username and password to the file
+  # Save the username, password, and email to the file
   with open(file_path, 'a') as f:
-      f.write(f"Username: {username} Password: {password}\n")
+      f.write(f"Username: {username} Password: {password} Email: {email}\n")
     
-  # Print the generated username and password
-  print(f"Username: {username} Password: {password}")
+  # Print the generated username, password, and email
+  print(f"Username: {username} Password: {password} Email: {email}")
 
 def create_accounts():
   while True:
@@ -52,7 +58,7 @@ def create_accounts():
 
 # Create threads
 threads = []
-for i in range(999):
+for i in range(1300):
   t = threading.Thread(target=create_accounts)
   threads.append(t)
   t.start()
