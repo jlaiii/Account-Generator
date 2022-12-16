@@ -1,20 +1,16 @@
-# Account Generator
-This script generates random email addresses, usernames, and passwords, and uses them to create accounts on a specified website. It then saves the generated username and password to a file called "accounts" on the desktop.
+# Account Generation Script
+This script is used to generate new accounts with randomly generated username, password, and email. The generated account information is saved to a file on the desktop and printed to the console.
 
-## Requirements
-Python 3
-requests library (can be installed using pip install requests)
-Usage
-To use the script, simply run it using Python:
-
-Copy code
-`python generate_accounts.py`
-The script will enter an infinite loop, generating and saving a new account on each iteration. To stop the script, press Ctrl + C.
+## How to use
+Clone the repository to your local machine
+Install the required libraries: pip install requests
+Run the script: python main.py
+The script will create 10 threads, each running in a loop to generate a new account. The generated account information will be saved to a file called accounts.txt on the desktop and printed to the console.
 
 ## Customization
-To change the website where the accounts are created, modify the response line to send a POST request to the desired URL. You can also customize the payload by adding or removing fields as needed.
+You can customize the number of threads by adjusting the value in the range function on line 45. For example, to create 20 threads, change range(10) to range(20).
 
-To change the location where the generated username and password are saved, modify the file_path variable to specify the desired file path.
+You can also customize the payload data for the POST request on line 24. This can be useful if you want to use the script to generate accounts on a different website that requires different form data.
 
 ## Disclaimer
-Use this script at your own risk. Creating accounts on websites without their permission may be a violation of their terms of service, and could result in legal consequences. Use this script for educational purposes only.
+This script is for educational purposes only. Use it at your own risk. I am not responsible for any consequences of using this script.
