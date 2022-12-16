@@ -16,7 +16,7 @@ You can install these libraries using `pip`, the Python package manager. For exa
 
 ## Usage
 
-To use this script, simply run it using Python. It will create 1000 threads, each of which will generate and register a random account on the website. The accounts will be saved to a file on the user's desktop, and the generated username, password, and email will be printed to the console.
+To use this script, simply run it using Python. It will create 10 threads, each of which will generate and register a random account on the website. The accounts will be saved to a file on the user's desktop, and the generated username, password, and email will be printed to the console.
 
 ## Customization
 
