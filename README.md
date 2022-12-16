@@ -8,7 +8,7 @@ Usage
 To use the script, simply run it using Python:
 
 Copy code
-` python generate_accounts.py
+`python generate_accounts.py`
 The script will enter an infinite loop, generating and saving a new account on each iteration. To stop the script, press Ctrl + C.
 
 ## Customization
