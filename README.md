@@ -6,11 +6,7 @@ This script is a Python script that generates and registers random accounts on a
 
 In order to run this script, you will need to have the following Python libraries installed:
 
-- `threading`
-- `random`
-- `string`
 - `requests`
-- `os`
 
 You can install these libraries using `pip`, the Python package manager. For example, to install the `requests` library, you can run the following command:
 
